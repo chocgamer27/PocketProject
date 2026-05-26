@@ -25,7 +25,6 @@ body {
   text-align: center;
   background: radial-gradient(circle at top, #6d28d9, #0b0b10 60%);
   padding: 60px 20px;
-  position: relative;
 }
 
 .hero h1 {
@@ -40,9 +39,16 @@ body {
   max-width: 520px;
 }
 
-/* NEW RSVP BUTTON */
-.rsvp {
+/* BUTTONS */
+.links {
   margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 12px;
@@ -53,14 +59,17 @@ body {
   font-size: 14px;
   opacity: 0.9;
   transition: 0.2s;
+  width: 240px;
+  text-align: center;
 }
 
-.rsvp:hover {
+.btn:hover {
   transform: scale(1.05);
   opacity: 1;
   background: rgba(255,255,255,0.12);
 }
 
+/* SECTIONS */
 .section {
   max-width: 900px;
   margin: auto;
@@ -94,10 +103,15 @@ body {
     Small ideas. Real builds. Learn by making experimental, niche, or unexpectedly useful projects.
   </p>
 
-  <!-- RSVP LINK (noticeable but not loud) -->
-  <a class="rsvp" href="https://pocketprojectrsvp.fillout.com/t/53eqyLWgQzus" target="_blank">
-    RSVP / Interest Form →
-  </a>
+  <div class="links">
+    <a class="btn" href="https://pocketprojectrsvp.fillout.com/t/53eqyLWgQzus" target="_blank">
+      RSVP / Interest Form →
+    </a>
+
+    <a class="btn" href="https://hackclub.enterprise.slack.com/archives/C0B6ZLCS1S4" target="_blank">
+      Slack (#pocketproject) →
+    </a>
+  </div>
 </div>
 
 <div class="section">
@@ -111,13 +125,22 @@ body {
 
   <div class="card">
     <h2>What you can build</h2>
-    <p>tiny tools • weird websites • hardware gadgets • automations • experiments</p>
+    <p>
+      tiny tools • weird websites • hardware gadgets • automations • experiments • game mods
+    </p>
   </div>
 
   <div class="card">
     <h2>Core idea</h2>
     <p>
       Not every project needs to change the world — just build something and learn from it.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>What matters</h2>
+    <p>
+      You learned something • You shipped something real • You documented it
     </p>
   </div>
 
