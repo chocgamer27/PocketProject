@@ -1,98 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PocketProject</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PocketProject</title>
 
-    .hero {
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #4f46e5, #9333ea);
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
-    h1 {
-      font-size: 48px;
-      margin: 0;
-    }
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #0b0b10;
+  color: white;
+  overflow-x: hidden;
+}
 
-    p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #6d28d9, #0b0b10 60%);
+  padding: 60px 20px;
+  position: relative;
+}
 
-    .section {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+.hero h1 {
+  font-size: 64px;
+  margin: 0;
+  letter-spacing: -2px;
+}
 
-    .card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
+.hero p {
+  font-size: 18px;
+  opacity: 0.8;
+  max-width: 520px;
+}
 
-    .tag {
-      display: inline-block;
-      background: #333;
-      padding: 5px 10px;
-      border-radius: 999px;
-      margin: 5px 5px 0 0;
-      font-size: 12px;
-    }
-  </style>
+/* NEW RSVP BUTTON */
+.rsvp {
+  margin-top: 18px;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.rsvp:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  background: rgba(255,255,255,0.12);
+}
+
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 22px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <h1>PocketProject</h1>
-    <p>Small ideas. Real builds. Learn by making things.</p>
+<div class="hero">
+  <h1>PocketProject</h1>
+  <p>
+    Small ideas. Real builds. Learn by making experimental, niche, or unexpectedly useful projects.
+  </p>
+
+  <!-- RSVP LINK (noticeable but not loud) -->
+  <a class="rsvp" href="https://pocketprojectrsvp.fillout.com/t/53eqyLWgQzus" target="_blank">
+    RSVP / Interest Form →
+  </a>
+</div>
+
+<div class="section">
+
+  <div class="card">
+    <h2>What is this?</h2>
+    <p>
+      PocketProject is a build-focused program for learning by creating small hardware or software projects.
+    </p>
   </div>
 
-  <div class="section">
-
-    <div class="card">
-      <h2>What is PocketProject?</h2>
-      <p>
-        PocketProject is a YSWS where you build small, niche, experimental or unexpectedly useful projects — hardware or software.
-        Not everything has to change the world. Just build something and learn from it.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>What can you make?</h2>
-      <span class="tag">tiny tools</span>
-      <span class="tag">weird websites</span>
-      <span class="tag">hardware gadgets</span>
-      <span class="tag">automations</span>
-      <span class="tag">game mods</span>
-      <span class="tag">experimental apps</span>
-    </div>
-
-    <div class="card">
-      <h2>Goal</h2>
-      <p>
-        Learn something new, build something real, and ship it — even if it’s messy.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Reward idea</h2>
-      <p>
-        Hardware kits, SBCs, electronics, dev tools, and stuff that helps your next project.
-      </p>
-    </div>
-
+  <div class="card">
+    <h2>What you can build</h2>
+    <p>tiny tools • weird websites • hardware gadgets • automations • experiments</p>
   </div>
+
+  <div class="card">
+    <h2>Core idea</h2>
+    <p>
+      Not every project needs to change the world — just build something and learn from it.
+    </p>
+  </div>
+
+</div>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
