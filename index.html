@@ -11,9 +11,11 @@
 body {
   margin: 0;
   font-family: Inter, sans-serif;
-  background: #0b0b10;
-  color: white;
-  overflow-x: hidden;
+  background: #5b5cff;
+  background-image: linear-gradient(#5b5cff 1px, transparent 1px),
+                    linear-gradient(90deg, #5b5cff 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: black;
 }
 
 /* LOGO */
@@ -25,10 +27,8 @@ body {
   height: 64px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  border: 5px solid white;
+  background: white;
   z-index: 10;
 }
 
@@ -38,33 +38,34 @@ body {
   object-fit: cover;
 }
 
+/* MAIN CARD */
+.container {
+  max-width: 900px;
+  margin: 80px auto;
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+}
+
 /* HERO */
 .hero {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: radial-gradient(circle at top, #6d28d9, #0b0b10 60%);
-  padding: 60px 20px;
+  padding-bottom: 30px;
 }
 
 .hero h1 {
   font-size: 64px;
   margin: 0;
-  letter-spacing: -2px;
 }
 
 .hero p {
   font-size: 18px;
   opacity: 0.8;
-  max-width: 520px;
 }
 
 /* BUTTONS */
 .links {
-  margin-top: 18px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -73,125 +74,88 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: #5b5cff;
   color: white;
   text-decoration: none;
   font-size: 14px;
-  opacity: 0.9;
-  transition: 0.2s;
-  width: 240px;
+  width: 260px;
   text-align: center;
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  opacity: 1;
-  background: rgba(255,255,255,0.12);
-}
-
 /* SECTIONS */
-.section {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
 .card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  padding: 22px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.6s ease;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #f6f6ff;
 }
 
-.card.show {
-  transform: translateY(0);
-  opacity: 1;
+.card h2 {
+  margin-top: 0;
+}
+
+/* small footer vibe */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
 <div class="logo">
   <img src="PPicon.png" alt="PocketProject Logo">
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>PocketProject</h1>
+<div class="container">
 
-  <p>
-    Small ideas. Real builds. Learn by making experimental, niche, and hopefully useful projects.
-  </p>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>PocketProject</h1>
+    <p>Small ideas. Real builds. Learn by making experimental, niche, and hopefully useful projects.</p>
 
-  <div class="links">
+    <div class="links">
+      <a class="btn" href="https://pocketprojectrsvp.fillout.com/t/53eqyLWgQzus" target="_blank">
+        RSVP / Interest Form →
+      </a>
 
-    <a class="btn" href="https://pocketprojectrsvp.fillout.com/t/53eqyLWgQzus" target="_blank">
-      RSVP / Interest Form →
-    </a>
-
-    <a class="btn" href="https://hackclub.enterprise.slack.com/archives/C0B6ZLCS1S4" target="_blank">
-      Slack (#pocketproject) →
-    </a>
-
+      <a class="btn" href="https://hackclub.enterprise.slack.com/archives/C0B6ZLCS1S4" target="_blank">
+        Slack (#pocketproject) →
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- CONTENT -->
-<div class="section">
-
+  <!-- CONTENT -->
   <div class="card">
     <h2>What is this?</h2>
-    <p>
-      PocketProject is a build-focused program for learning by creating small hardware or software projects.
-    </p>
+    <p>PocketProject is a build-focused program for learning by creating small hardware or software projects.</p>
   </div>
 
   <div class="card">
     <h2>What you can build</h2>
-    <p>
-      tiny tools • weird websites • hardware gadgets • automations • experiments • game mods
-    </p>
+    <p>tiny tools • weird websites • hardware gadgets • automations • experiments • game mods</p>
   </div>
 
   <div class="card">
     <h2>Core idea</h2>
-    <p>
-      Not every project needs to change the world — just build something and learn from it.
-    </p>
+    <p>Not every project needs to change the world — just build something and learn from it.</p>
   </div>
 
   <div class="card">
     <h2>More Info Coming soon!</h2>
-    <p>
-      (Pocket Project isnt an offical YSWS yet its still upcoming! - If you tell your friends to RSVP and join the slack channel We can make this happen!)
-    </p>
+    <p>(Pocket Project isnt an official YSWS yet its still upcoming! - If you tell your friends to RSVP and join the slack channel We can make this happen!)</p>
+  </div>
+
+  <div class="footer">
+    PocketProject • An upcoming YSWS • Made by Chocgamer27 on Hack Club slack
   </div>
 
 </div>
-
-<script>
-const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
-
-cards.forEach(card => observer.observe(card));
-</script>
 
 </body>
 </html>
